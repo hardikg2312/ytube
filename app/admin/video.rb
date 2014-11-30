@@ -28,6 +28,12 @@ ActiveAdmin.register Video do
       f.input :video_id
       f.input :video_url
     end
+    f.inputs "Select Categories" do
+      f.label :select_category
+      div :class => "category_select" do
+        f.collection_select :category_ids, Category.all , :id, :category_name, {}, {:multiple => true}
+      end
+    end
     f.actions
   end
 
@@ -40,8 +46,24 @@ ActiveAdmin.register Video do
       video = Video.create_video(video_id, video_hash)
       #render :json => {"result" => video}
       video.video_url = params[:video][:video_url]
+      categories = Category.find params[:video][:category_ids].reject! { |c| c.empty? }
+      video.categories = categories
       video.save!
-      render :index 
-    end 
+      redirect_to admin_videos_path
+    end
+
+    def update
+      video_id = params[:video][:video_id]
+      api_key = "AIzaSyC0HWiU5e7AFkXt2NMNBkPmPOVgC_QDx_0"
+      http = Curl.get("https://www.googleapis.com/youtube/v3/videos?id=#{video_id}&key=#{api_key}&part=snippet,contentDetails,statistics,status")
+      video_hash = JSON.load(http.body_str)
+      video = Video.create_video(video_id, video_hash)
+      #render :json => {"result" => video}
+      video.video_url = params[:video][:video_url]
+      categories = Category.find params[:video][:category_ids].reject! { |c| c.empty? }
+      video.categories = categories
+      video.save!
+      redirect_to admin_videos_path
+    end
   end
 end

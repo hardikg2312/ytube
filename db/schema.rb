@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141130142323) do
+ActiveRecord::Schema.define(version: 20141130143535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,14 @@ ActiveRecord::Schema.define(version: 20141130142323) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "categories_videos", id: false, force: true do |t|
+    t.integer "category_id"
+    t.integer "video_id"
+  end
+
+  add_index "categories_videos", ["category_id", "video_id"], name: "index_categories_videos_on_category_id_and_video_id", unique: true, using: :btree
+  add_index "categories_videos", ["video_id"], name: "index_categories_videos_on_video_id", using: :btree
 
   create_table "channels", force: true do |t|
     t.string   "ytube_id"

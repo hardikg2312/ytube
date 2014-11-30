@@ -3,6 +3,7 @@ class Video < ActiveRecord::Base
   require 'json'
   
   belongs_to :channel
+  has_and_belongs_to_many :categories
 
   class << self
     def create_video(id, data)
