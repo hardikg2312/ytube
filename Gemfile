@@ -40,4 +40,5 @@ gem 'spring',        group: :development
 
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
+gem 'curb'
 
