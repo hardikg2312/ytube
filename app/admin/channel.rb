@@ -13,6 +13,15 @@ ActiveAdmin.register Channel do
   #   permitted << :other if resource.something?
   #   permitted
   # end
+  index do
+    column :id
+    column :ytube_id
+    column :channel_category_id
+    column :title
+    column :subscriptions
+    column :total_views
+    actions
+  end
 
 
 end
