@@ -1,1 +1,9 @@
-hello
+<div class="container">
+  <% @categories.each do |c| %>
+    <div class="category_item">
+      <%= link_to image_tag(c.category_photo), c , :class => "category_image"%>
+      <br>
+      <%= c.category_name %>
+    </div>
+  <% end %>	
+</div>
