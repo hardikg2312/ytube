@@ -25,7 +25,8 @@ ActiveAdmin.register Video do
   controller do
     def create
       video_id = params[:video][:video_id]
-      http = Curl.get("https://www.googleapis.com/youtube/v3/videos?id=#{video_id}&key=AIzaSyCtlFuZZ3HS528pAM8VCkSKlbIeE6zr9Qc&part=snippet,contentDetails,statistics,status")
+      api_key = "AIzaSyC0HWiU5e7AFkXt2NMNBkPmPOVgC_QDx_0"
+      http = Curl.get("https://www.googleapis.com/youtube/v3/videos?id=#{video_id}&key=#{api_key}&part=snippet,contentDetails,statistics,status")
       video_hash = JSON.load(http.body_str)
       render :json => { errorcode: 0, errorstr: "Success", result: video_hash }
     end 
