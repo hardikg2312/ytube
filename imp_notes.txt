@@ -1,0 +1,6 @@
+## to get subscription count
+http://gdata.youtube.com/feeds/api/users/UC_x5XG1OV2P6uZZ5FSM9Ttw
+
+
+## to get vedio information
+https://www.googleapis.com/youtube/v3/videos?id=Dd7dQh8u4Hc&key=AIzaSyCtlFuZZ3HS528pAM8VCkSKlbIeE6zr9Qc&part=snippet,contentDetails,statistics,status
