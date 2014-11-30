@@ -14,6 +14,16 @@ ActiveAdmin.register Video do
   #   permitted
   # end
 
+  index do
+    column :id
+    column :video_id
+    column :channel_id
+    column :view_count
+    column :like_count
+    column :dislike_count
+    actions
+  end
+
   form do |f|
     f.inputs "Details" do
       f.input :video_id
@@ -28,9 +38,11 @@ ActiveAdmin.register Video do
       api_key = "AIzaSyC0HWiU5e7AFkXt2NMNBkPmPOVgC_QDx_0"
       http = Curl.get("https://www.googleapis.com/youtube/v3/videos?id=#{video_id}&key=#{api_key}&part=snippet,contentDetails,statistics,status")
       video_hash = JSON.load(http.body_str)
-      render :json => { errorcode: 0, errorstr: "Success", result: video_hash }
+      video = Video.create_video(video_id, video_hash)
+      #render :json => {"result" => video}
+      video.video_url = params[:video][:video_url]
+      video.save!
+      render :index 
     end 
-  end 
-
-
+  end
 end
