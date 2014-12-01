@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  
+
   # associactions
   has_and_belongs_to_many :videos
 
@@ -9,4 +9,5 @@ class Category < ActiveRecord::Base
 
 	extend FriendlyId
   friendly_id :category_name, use: :slugged
+  mount_uploader :category_photo, ImageUploader
 end
