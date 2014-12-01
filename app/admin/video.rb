@@ -39,31 +39,21 @@ ActiveAdmin.register Video do
 
   controller do
     def create
-      video_id = params[:video][:video_id]
-      api_key = "AIzaSyC0HWiU5e7AFkXt2NMNBkPmPOVgC_QDx_0"
-      http = Curl.get("https://www.googleapis.com/youtube/v3/videos?id=#{video_id}&key=#{api_key}&part=snippet,contentDetails,statistics,status")
-      video_hash = JSON.load(http.body_str)
-      video = Video.create_video(video_id, video_hash)
-      #render :json => {"result" => video}
-      video.video_url = params[:video][:video_url]
-      categories = Category.find params[:video][:category_ids].reject! { |c| c.empty? }
-      video.categories = categories
-      video.save!
-      redirect_to admin_videos_path
+      video = Video.find_by_video_id(params[:video][:video_id])
+      if video
+        redirect_to edit_admin_video_path(video)
+      else
+        video = Video.new
+        video.create_video(params)
+        redirect_to admin_videos_path
+      end
     end
 
     def update
-      video_id = params[:video][:video_id]
-      api_key = "AIzaSyC0HWiU5e7AFkXt2NMNBkPmPOVgC_QDx_0"
-      http = Curl.get("https://www.googleapis.com/youtube/v3/videos?id=#{video_id}&key=#{api_key}&part=snippet,contentDetails,statistics,status")
-      video_hash = JSON.load(http.body_str)
-      video = Video.create_video(video_id, video_hash)
-      #render :json => {"result" => video}
-      video.video_url = params[:video][:video_url]
-      categories = Category.find params[:video][:category_ids].reject! { |c| c.empty? }
-      video.categories = categories
-      video.save!
+      video = Video.find_by_video_id(params[:video][:video_id])
+      video.create_video(params)
       redirect_to admin_videos_path
+      #render :json => {"result" => video}
     end
   end
 end
