@@ -1,9 +1,16 @@
 class Video < ActiveRecord::Base
 
   require 'json'
-  
+
+  # associactions
   belongs_to :channel
   has_and_belongs_to_many :categories
+
+  # validations
+  validates_presence_of :video_id
+  validates_uniqueness_of :video_id
+  validates_presence_of :channel_id
+
 
   def create_video(params)
     api_key = "AIzaSyC0HWiU5e7AFkXt2NMNBkPmPOVgC_QDx_0"

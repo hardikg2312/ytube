@@ -1,5 +1,11 @@
 class Channel < ActiveRecord::Base
+
+  # associactions
   has_many :videos
+
+  # validations
+  validates_presence_of   :ytube_id
+  validates_uniqueness_of :ytube_id
 
   class << self
     def get_or_create_channel(id, category_id)
