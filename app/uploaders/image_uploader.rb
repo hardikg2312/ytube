@@ -12,6 +12,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     resize_to_fit(100, 100)
   end
 
+  def public_id
+    return "uploads/#{Rails.env}/#{model.class.to_s.underscore}/#{model.id}"
+  end
+
   #require 'carrierwave/orm/activerecord'
 
   # Include RMagick or MiniMagick support:
