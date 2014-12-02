@@ -1,9 +1,9 @@
 <div class="container">
   <% @categories.each do |c| %>
     <div class="category_item">
-      <%= link_to image_tag(c.category_photo_url.to_s), c , :class => "category_image"%>
+      <%= link_to image_tag(c.category_photo_url.to_s, :width => "100%", :height => "200px"), category_videos_path(c) , :class => "category_image"%>
       <br>
-      <%= c.category_name %>
+      <%= "#{c.category_name}(#{c.videos.size})" %>
     </div>
   <% end %>	
 </div>
