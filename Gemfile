@@ -43,4 +43,6 @@ gem 'devise'
 gem 'curb'
 gem 'friendly_id', '~> 5.0.0'
 
+#image uploading on cloudinary using carrierwave
 gem 'carrierwave'
+gem 'cloudinary'
