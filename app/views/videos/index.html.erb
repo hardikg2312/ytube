@@ -1,18 +1,8 @@
 <div class="container">
   <% @videos.each do |v| %>
     <div class="category_item">
-      <iframe id="player" type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/<%= v.video_id %>" frameborder="0"></iframe>
-      <div class="video_index_txt">
-      <%= link_to v do %>
-      	<span class="video_index_txt_span1"><%= v.title %></span><br>
-      <% end %>
-      <%= link_to v.channel do %>
-      	<span class="video_index_txt_span2">by <span><%= "#{v.channel.title}" %></span></span><br>
-      <% end %>
-      	<span class="video_index_txt_span3"><%= "#{number_with_delimiter(v.view_count, :delimiter => ',')} views" %></span>
-      	<span class="video_index_txt_span4"><%= "#{number_with_delimiter(v.like_count, :delimiter => ',')} likes" %></span>
-      </div>
-      
+      <iframe id="player" type="text/html" width="100%" height="222px;" src="http://www.youtube.com/embed/<%= v.video_id %>" frameborder="0"></iframe>
+      <%= render 'video_info', :v => v %>
     </div>
   <% end %>	
 </div>

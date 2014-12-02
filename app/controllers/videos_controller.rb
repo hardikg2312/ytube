@@ -5,4 +5,8 @@ class VideosController < ApplicationController
     @videos = @category.videos
   end
 
+  def show
+    @video = Video.find_by_video_id(params[:id])
+  end
+
 end

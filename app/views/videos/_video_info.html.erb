@@ -1,0 +1,11 @@
+<div class="video_index_txt">
+  <%= link_to v.video_id do %>
+    <span class="video_index_txt_span1"><%= v.title %></span><br>
+  <% end %>
+  <%= link_to v.channel do %>
+    <span class="video_index_txt_span2">by <span><%= "#{v.channel.title}" %></span></span>
+  <% end %>
+  <%= link_to "Large View", video_path(v.video_id) , :class => "video_index_txt_span5" if params[:action] == 'index' %><br>
+  <span class="video_index_txt_span3"><%= "#{number_with_delimiter(v.view_count, :delimiter => ',')} views" %></span>
+  <span class="video_index_txt_span4"><%= "#{number_with_delimiter(v.like_count, :delimiter => ',')} likes" %></span>
+</div>
