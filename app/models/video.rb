@@ -3,7 +3,7 @@ class Video < ActiveRecord::Base
   require 'json'
 
   # associactions
-  belongs_to :channel
+  belongs_to :channel, :counter_cache => true
   has_and_belongs_to_many :categories
 
   # validations
