@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+	$('.navigation_links').hover(function(){
+		$(this).addClass('border_bottom');
+	},function(){
+		$(this).removeClass('border_bottom');
+	});
+});
