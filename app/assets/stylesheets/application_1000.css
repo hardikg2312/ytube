@@ -1,0 +1,19 @@
+@media screen and (max-width: 1000px) {
+  .container{
+    padding-top: 62px;
+    margin: auto;
+    width: 96%;
+    height: 400px;
+  }
+
+  .category_item{
+    float: left;
+    width: 47%;
+    height: auto;
+    border: 1px solid #e1e8ed;
+    margin: 1%;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    padding-bottom: 10px;  
+   }
+}

@@ -8,6 +8,6 @@ class CategoriesController < ApplicationController
 
   private
   def get_bottem_class
-    @border_class = 'active_border'
+    @category_border_class = 'active_border'
   end
 end

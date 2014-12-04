@@ -1,5 +1,5 @@
 <div class="navigation">
-  <div class="navigation_links <%= @border_class %>"><%= link_to "Categories", categories_path %></div>
-  <div class="navigation_links"><%= link_to "Channels", channels_path %></div>
-  <div class="navigation_links"><%= link_to "Videos", videos_path %></div>
+  <a href="/categories"><div class="navigation_links <%= @category_border_class %>">Categories</div></a>
+  <a href="/channels"><div class="navigation_links <%= @channel_border_class %>">Channels</div></a>
+  <a href="/videos"><div class="navigation_links">Videos</div></a>
 </div>
