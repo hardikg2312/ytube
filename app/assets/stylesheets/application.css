@@ -15,7 +15,7 @@
  */
 
 body{
-  background-color: #EDEDED;
+  background-color: #EDEDED !important;
 }
 
 .navigation{
@@ -51,12 +51,13 @@ body{
   height: 400px;
 }
 
-.video_index_txt{ color: #949494; text-align: left; margin: 4px; }
-.video_index_txt_span1{font-weight: bold;color: #0084B4;}
-.video_index_txt_span2 span{ color: #404040; font-size: 0.95em; font-weight: bold; }
-.video_index_txt_span3{font-size: 0.8em; float: left;}
-.video_index_txt_span4{font-size: 0.8em; float: right;}
-.video_index_txt_span5{float: right;text-decoration: underline !important ;font-size: 0.8em;color: #0084B4;}
+.category_index_txt{ color: #949494; text-align: left; margin: 4px; }
+.category_index_txt_span1{font-weight: bold;color: #0084B4;}
+.category_index_txt_span2 span a{ color: #404040; font-size: 0.95em; font-weight: bold; }
+.category_index_txt_span2_ago{font-size: 0.8em;}
+.category_index_txt_span3{font-size: 0.8em; float: left;}
+.category_index_txt_span4{font-size: 0.8em; float: right;}
+.category_index_txt_span5{text-decoration: underline !important ;font-size: 0.8em;color: #0084B4;}
 
 .video_container{background-color: #ffffff;}
 .video_show_txt{ color: #5D5D5D; text-align: left; margin: 4px; }
@@ -67,7 +68,7 @@ body{
 .video_show_txt_span4{float: right;font-size: 1.08em;}
 .video_show_txt_span5{font-size: 1.1em; color: #4B4B4B;}
 
-.category_item{
+.container_item{
   float: left;
   width: 31%;
   height: auto;
@@ -85,3 +86,7 @@ body{
   background-color: #ffffff;
   padding-bottom: 10px;  
 }
+
+.channel_index_img{float: left;border-radius: 8px;}
+.channel_index_span1{font-weight: bold;color: #0084B4;float: left; margin: 8px;}
+.channel_index_span2{font-size: 0.85em; float: left; color: #949494; margin-left: 8px;}

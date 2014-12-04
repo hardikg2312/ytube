@@ -9,7 +9,7 @@
         by <span><%=  link_to "#{@video.channel.title}", @video.channel %></span>
         <%= "#{number_with_delimiter(@video.channel.subscriptions, :delimiter => ',')} subscribers"%>
       </span><br>
-      <span class="video_show_txt_span3"><%= "#{number_with_delimiter(@video.view_count, :delimiter => ',')} views" %></span>
+      <span class="video_show_txt_span3"><%= "#{number_with_delimiter(@video.view_count,:delimiter => ',')} views" %></span>
       <span class="video_show_txt_span4"><%= "#{number_with_delimiter(@video.like_count, :delimiter => ',')} likes" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= "#{number_with_delimiter(@video.dislike_count, :delimiter => ',')} dislikes" %></span><br><br><hr>
       <span class="video_show_txt_span5"><%= @video.description %></span>
     </div>
