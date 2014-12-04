@@ -4,13 +4,11 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root :to => "categories#index"
 
-  resources :categories do
-    resources :videos , :only => [:index]
-  end
+  resources :categories
 
   resources :channels
 
-  resources :videos, :except => [:index]
+  resources :videos
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

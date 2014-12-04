@@ -13,12 +13,10 @@
  *= require_self
  *= require_tree .
  */
-a, a:link, a:visited{
-   text-decoration: none;
-}
- body{
+
+body{
   background-color: #EDEDED;
- }
+}
 
 .navigation{
   width: 100%;
