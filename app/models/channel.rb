@@ -2,6 +2,7 @@ class Channel < ActiveRecord::Base
 
   # associactions
   has_many :videos
+  belongs_to :category, :counter_cache => true
 
   # validations
   validates_presence_of   :ytube_id

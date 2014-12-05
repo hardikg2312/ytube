@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141202145331) do
+ActiveRecord::Schema.define(version: 20141205164755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20141202145331) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.integer  "channels_count", default: 0
   end
 
   add_index "categories", ["slug"], name: "index_categories_on_slug", unique: true, using: :btree
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(version: 20141202145331) do
     t.datetime "updated_at"
     t.text     "channel_url"
     t.integer  "videos_count",        default: 0
+    t.integer  "category_id"
   end
 
   create_table "friendly_id_slugs", force: true do |t|

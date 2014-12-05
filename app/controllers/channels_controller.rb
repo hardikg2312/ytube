@@ -2,7 +2,7 @@ class ChannelsController < ApplicationController
   before_filter :get_bottem_class, :only => [:index]
 
   def index
-    @channels = Channel.order('subscriptions desc')
+    @channels = Channel.order('subscriptions desc').includes(:category)
   end
 
   private

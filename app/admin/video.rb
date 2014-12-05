@@ -37,6 +37,9 @@ ActiveAdmin.register Video do
     f.actions
   end
 
+  preserve_default_filters!
+  filter :categories, :as => :select, :collection => Category.all.collect {|c| [c.category_name, c.id]}
+
   controller do
     def create
       video = Video.find_by_video_id(params[:video][:video_id])

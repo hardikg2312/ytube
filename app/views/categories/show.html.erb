@@ -1,29 +1,3 @@
-<style type="text/css">
-  a, a:link, a:visited{
-  text-decoration: none;
-}
-</style>
 <div class="container">
-  <% @videos.each do |v| %>
-    <div class="container_item">
-      <iframe id="player" type="text/html" width="100%" height="222px;" src="http://www.youtube.com/embed/<%= v.video_id %>" frameborder="0"></iframe>
-      <div class="category_index_txt">
-        <%= link_to v.video_id do %>
-          <span class="category_index_txt_span1"><%= truncate(v.title, length: 50) %></span><br>
-        <% end %>
-        <span class="category_index_txt_span2">
-          by <span><%= link_to v.channel.title, v %></span>
-          <span class="category_index_txt_span2_ago"><%= days_ago(v.published_at) %></span>
-        </span>
-        <br>
-        <span class="category_index_txt_span3"><%= "#{number_with_delimiter(v.view_count, :delimiter => ',')} views" %></span>
-        <span class="category_index_txt_span4">
-          <%= "#{number_with_delimiter(v.like_count, :delimiter => ',')} likes" %>&nbsp;&nbsp;&nbsp;
-          <%= "#{number_with_delimiter(v.dislike_count, :delimiter => ',')} dislikes" %>
-        </span>
-        <br>
-        <%= link_to "Large View", video_path(v.video_id) , :class => "category_index_txt_span5" %>
-      </div>
-    </div>
-  <% end %>
+  <%= render 'videos/video_item', :videos => @videos %>
 </div>

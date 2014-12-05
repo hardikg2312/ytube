@@ -10,10 +10,15 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require active_admin
  *= require_self
- *= require_tree .
+ *= require application_1000
+ *= require application_600
  */
-
+a, a:link, a:visited{
+  text-decoration: none;
+  color: #0084B4;
+}
 body{
   background-color: #EDEDED !important;
 }
@@ -89,4 +94,4 @@ body{
 
 .channel_index_img{float: left;border-radius: 8px;}
 .channel_index_span1{font-weight: bold;color: #0084B4;float: left; margin: 8px;}
-.channel_index_span2{font-size: 0.85em; float: left; color: #949494; margin-left: 8px;}
+.channel_index_span2{font-size: 0.85em; float: left; color: #505050; margin-left: 8px;}
