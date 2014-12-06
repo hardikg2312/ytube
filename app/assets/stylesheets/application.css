@@ -86,6 +86,7 @@ body{
   background-color: #ffffff;
   padding-bottom: 10px;  
 }
+.container_item_image{cursor: pointer;}
 
 .video_player{
   width: 100%;
