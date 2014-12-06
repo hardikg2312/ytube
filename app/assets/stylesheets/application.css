@@ -20,7 +20,7 @@ a, a:link, a:visited{
   color: #0084B4;
 }
 body{
-  background-color: #efefef !important;
+  background-color: #EDEDED !important;
 }
 
 .navigation{
@@ -86,7 +86,7 @@ body{
   background-color: #ffffff;
   padding-bottom: 10px;  
 }
-.container_item_image{cursor: pointer;}
+.container_item_image img{cursor: pointer;border-radius: 4px;}
 
 .video_player{
   width: 100%;
