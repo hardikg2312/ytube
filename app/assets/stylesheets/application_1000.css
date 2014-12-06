@@ -3,13 +3,12 @@
     padding-top: 62px;
     margin: auto;
     width: 96%;
-    height: 400px;
   }
 
   .container_item{
     float: left;
     width: 47%;
-    height: auto;
+    height: 320px;
     border: 1px solid #e1e8ed;
     margin: 1%;
     margin-bottom: 30px;

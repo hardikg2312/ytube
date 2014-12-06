@@ -3,7 +3,7 @@
   $(window).scroll(function(){
     var top = $(this).scrollTop();
     if(top > 50)
-      $('.navigation_float_link').empty().append('<%= link_to "New", category_path(@category, :sort => "new"), :remote => true %> | <%= link_to "Popular", category_path(@category, :sort => "popular"), :remote => true %>').fadeIn();
+      $('.navigation_float_link').empty().append('<%= link_to "New", category_path(@category, :sort => "new", :page => 1), :remote => true %> | <%= link_to "Popular", category_path(@category, :sort => "popular", :page => 1), :remote => true %>').fadeIn();
     else
       $('.navigation_float_link').fadeOut();
     });
@@ -11,10 +11,11 @@
 </script>
 <div class="container">
   <table class="page_navigation_table">
-    <tr><td><%= link_to "New", category_path(@category, :sort => "new"), :remote => true %>  |
-            <%= link_to "Popular", category_path(@category, :sort => "popular"), :remote => true %></td></tr>
+    <tr><td><%= link_to "New", category_path(@category, :sort => "new", :page => 1), :remote => true %>  |
+            <%= link_to "Popular", category_path(@category, :sort => "popular", :page => 1), :remote => true %></td></tr>
   </table>
   <div class="item_container">
     <%= render 'videos/video_item', :videos => @videos %>
   </div>
+  <div class="container_pagination_button"><%= link_to "View More...",category_path(@category, :sort => "new", :page => @page +1 ), :remote => true  %></div>
 </div>
