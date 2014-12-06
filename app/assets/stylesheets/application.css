@@ -14,6 +14,7 @@
  *= require_self
  *= require application_1000
  *= require application_600
+ *= require animations
  */
 a, a:link, a:visited{
   text-decoration: none;
@@ -85,9 +86,13 @@ body{
   text-align: center;
   font-size: 1.2em;
   background-color: #ffffff;
-  padding-bottom: 10px;  
+  padding-bottom: 10px;
 }
-.container_item_image img{cursor: pointer;border-radius: 4px;}
+.container_item_image img{cursor: pointer;
+  border-radius: 4px;
+  -webkit-animation: image_animation 0.5s; /* Chrome, Safari, Opera */
+  animation: image_animation 0.5s;
+}
 .container_pagination_button{ clear: both; width: 100%;font-size: 1.5em;font-weight: bold;text-align: center;padding-top: 20px;}
 
 .video_player{
