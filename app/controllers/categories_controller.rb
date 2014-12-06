@@ -13,6 +13,7 @@ class CategoriesController < ApplicationController
     else
       @videos = @category.videos.order('id desc').paginate(:page => current_page, :per_page => per_page)
     end
+    @channels = @category.channels.order('channels.subscriptions desc').limit(12)
     respond_to do |format|
       format.html
       format.js

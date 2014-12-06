@@ -23,6 +23,8 @@ body{
   background-color: #EDEDED !important;
 }
 
+.div_h3{font-size: 1.3em; margin: 15px;font-weight: bold;}
+
 .navigation{
   width: 100%;
   height: 44px;
@@ -98,3 +100,11 @@ body{
 .channel_index_img{float: left;border-radius: 8px;}
 .channel_index_span1{font-weight: bold;color: #0084B4;float: left; margin: 8px;}
 .channel_index_span2{font-size: 0.85em; float: left; color: #505050; margin-left: 8px;}
+
+.footer_container{
+  clear: both;
+  width: 100%;
+  height: 80px;
+  background-color: red;
+  padding: 50px;
+}

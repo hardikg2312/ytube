@@ -1,11 +1,3 @@
 <div class="container">
-  <% @channels.each do |c| %>
-    <div class="container_item">
-      <%= link_to image_tag(c.thumbnail, :class => "channel_index_img"), c %>
-      <span class="channel_index_span1"><%= link_to c.title, c %><%= "  (#{c.category.category_name})" if c.category  %></span><br><br>
-      <span class="channel_index_span2"><b><%= pluralize(number_with_delimiter(c.subscriptions, :delimiter => ','),'Subscriber')%></b></span><br>
-      <span class="channel_index_span2"><%= pluralize(number_with_delimiter(c.total_views, :delimiter => ','), 'View') %></span><br>
-      <span class="channel_index_span2"><%= pluralize(number_with_delimiter(c.videos_count, :delimiter => ','), 'Video') %></span>
-    </div>
-  <% end %>
+  <%= render 'channel_item', :channels => @channels %>
 </div>

@@ -17,5 +17,9 @@
   <div class="item_container">
     <%= render 'videos/video_item', :videos => @videos %>
   </div>
-  <div class="container_pagination_button"><%= link_to "View More...",category_path(@category, :sort => "new", :page => @page +1 ), :remote => true  %></div>
+</div>
+<div class="container_pagination_button"><%= link_to "View More...",category_path(@category, :sort => "new", :page => @page +1 ), :remote => true  %></div>
+<div class="container">
+  <div class="div_h3">Popular Channel for <%= @category.category_name   %></div>
+  <%= render 'channels/channel_item', :channels => @channels %>
 </div>
