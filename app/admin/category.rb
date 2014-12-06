@@ -3,7 +3,7 @@ ActiveAdmin.register Category do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :category_name, :category_photo
+  permit_params :category_name, :category_photo, :category_type, :parent_category
   #
   # or
   #
@@ -27,6 +27,8 @@ ActiveAdmin.register Category do
     f.inputs "Details" do
       f.input :category_name
       f.input :category_photo, :as => :file, :hint => f.template.image_tag(f.object.category_photo.url)
+      f.input :category_type, :as => :select, :collection => [["Main", "main"], ["Sub","sub"]]
+      f.input :parent_category, :as => :select, :collection => Category.all.map { |c| [ c.category_name, c.id ] }
     end
     f.actions
   end
@@ -44,8 +46,15 @@ ActiveAdmin.register Category do
       @category = Category.friendly.find_by_slug(params[:id])
       @category.category_name = params[:category][:category_name]
       @category.category_photo = params[:category][:category_photo]
+      @category.category_type = params[:category][:category_type]
+      @category.parent_category = params[:category][:parent_category]
       @category.save!
       redirect_to admin_categories_path
+    end
+
+    def destroy
+      @category = Category.friendly.find_by_slug(params[:id])
+      super
     end
   end
 

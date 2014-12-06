@@ -33,4 +33,6 @@
     background-color: #ffffff;
     padding-bottom: 10px;  
   }
+
+  .navigation_float_link{margin-left: 5px;text-align: center;font-weight: bold;font-size: 0.6em; height: 32px;background-color: #ffffff;}
 }
