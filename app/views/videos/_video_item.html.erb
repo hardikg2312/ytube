@@ -13,7 +13,7 @@ $(document).ready(function(){
     </div>
     <div class="category_index_txt">
       <%= link_to v.video_id do %>
-        <span class="category_index_txt_span1"><%= truncate(v.title, length: 50) %></span><br>
+        <span class="category_index_txt_span1"><%= truncate(v.title, length: 40) %></span><br>
       <% end %>
       <span class="category_index_txt_span2">
         by <span><%= link_to v.channel.title, v %></span>

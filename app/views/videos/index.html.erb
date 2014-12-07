@@ -8,22 +8,38 @@
     else
       $('.navigation_float_link').fadeOut();
     });
+    
+    $('.video_search').keypress(function(event) {
+      if ( event.which == 13 ) {
+        $('#filter_form').submit();
+      }
+    });
+    
+    $( ".categories_category_ids" ).chosen().change(function(event) {
+      $('#filter_form').submit();
+    });
+
   });
 </script>
 <div class="container">
-  <table class="page_navigation_table">
-    <tr><td><%= link_to "New", videos_path(:sort => "new", :page => 1), :remote => true %>  |
-            <%= link_to "Popular", videos_path(:sort => "popular", :page => 1), :remote => true %></td></tr>
-  </table>
-  <div class="filter_class">
-    <%= form_tag( videos_path, remote: true, :method => 'get') do %>
-      <table class="video_search_table">
-        <tr>
-          <td><input type="text" name = "video_search" class="video_search"></td>
-          <td><%= collection_select :categories, :category_ids, Category.order('category_name') , :id, :category_name, {}, {:multiple => true,  :class => "categories_category_ids"}%></td>
-        </tr>
-      </table>
-    <% end %>
+  <div class="filters_container">
+    <table class="page_navigation_table">
+      <tr><td><%= link_to "New", videos_path(:sort => "new", :page => 1), :remote => true %>  |
+              <%= link_to "Popular", videos_path(:sort => "popular", :page => 1), :remote => true %></td></tr>
+    </table>
+    <div class="filter_class">
+      <%= form_tag( videos_path, remote: true, :method => 'get', :id => 'filter_form') do %>
+        <table class="video_search_table">
+          <tr>
+            <td><input type="text" name = "video_search" class="video_search"></td>
+            <td><%= collection_select :categories, :category_ids, Category.order('category_name') , :id, :category_name, {}, {:multiple => true,  :class => "categories_category_ids"}%></td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
   </div>
-	<%= render 'video_item', :videos => @videos %>
+  <div class="item_container">
+	 <%= render 'video_item', :videos => @videos %>
+  </div>
 </div>
+<div class="container_pagination_button"><%= link_to "View More...",videos_path( :sort => "new", :page => @page +1 ), :remote => true  %></div>

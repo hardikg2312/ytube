@@ -1,0 +1,11 @@
+<% if !@videos.blank? %>
+  <% if current_page == 1 %>
+    $('.item_container').empty().append("<%= escape_javascript(render 'videos/video_item', :videos => @videos) %>");
+  <% else %>
+    $('.item_container').append("<%= escape_javascript(render 'videos/video_item', :videos => @videos) %>");
+  <% end %>
+  $('.container_pagination_button').empty().append('<%= link_to "View More...",videos_path(:sort => "#{params[:sort]}", :page => @page +1, "category_ids" => "#{@parse_categories}"), :remote => true%>');
+<% else %>
+  $('.container_pagination_button').empty();
+<% end %>
+
