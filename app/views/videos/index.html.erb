@@ -1,3 +1,29 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#categories_category_ids').chosen();
+    $(window).scroll(function(){
+    var top = $(this).scrollTop();
+    if(top > 60)
+      $('.navigation_float_link').empty().append('<%= link_to "New", videos_path(:sort => "new", :page => 1), :remote => true %> | <%= link_to "Popular", videos_path(:sort => "popular", :page => 1), :remote => true %>').fadeIn();
+    else
+      $('.navigation_float_link').fadeOut();
+    });
+  });
+</script>
 <div class="container">
-  <%= render 'video_item', :videos => @videos %>
+  <table class="page_navigation_table">
+    <tr><td><%= link_to "New", videos_path(:sort => "new", :page => 1), :remote => true %>  |
+            <%= link_to "Popular", videos_path(:sort => "popular", :page => 1), :remote => true %></td></tr>
+  </table>
+  <div class="filter_class">
+    <%= form_tag( videos_path, remote: true, :method => 'get') do %>
+      <table class="video_search_table">
+        <tr>
+          <td><input type="text" name = "video_search" class="video_search"></td>
+          <td><%= collection_select :categories, :category_ids, Category.order('category_name') , :id, :category_name, {}, {:multiple => true,  :class => "categories_category_ids"}%></td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+	<%= render 'video_item', :videos => @videos %>
 </div>
