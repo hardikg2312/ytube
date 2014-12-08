@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141205175433) do
+ActiveRecord::Schema.define(version: 20141208094957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,12 +76,12 @@ ActiveRecord::Schema.define(version: 20141205175433) do
     t.text     "title"
     t.text     "content"
     t.text     "thumbnail"
-    t.integer  "subscriptions"
-    t.integer  "total_views"
+    t.integer  "subscriptions",       limit: 8
+    t.integer  "total_views",         limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "channel_url"
-    t.integer  "videos_count",        default: 0
+    t.integer  "videos_count",                  default: 0
     t.integer  "category_id"
   end
 

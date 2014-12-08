@@ -15,9 +15,9 @@
       }
     });
     
-    $( ".categories_category_ids" ).chosen().change(function(event) {
-      $('#filter_form').submit();
-    });
+    // $( ".categories_category_ids" ).chosen().change(function(event) {
+    //   $('#filter_form').submit();
+    // });
 
   });
 </script>
@@ -32,7 +32,7 @@
         <table class="video_search_table">
           <tr>
             <td><input type="text" name = "video_search" class="video_search"></td>
-            <td><%= collection_select :categories, :category_ids, Category.order('category_name') , :id, :category_name, {}, {:multiple => true,  :class => "categories_category_ids"}%></td>
+            <!-- <td><%= collection_select :categories, :category_ids, Category.order('category_name') , :id, :category_name, {}, {:multiple => true,  :class => "categories_category_ids"}%></td> -->
           </tr>
         </table>
       <% end %>
