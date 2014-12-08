@@ -2,7 +2,17 @@ class ChannelsController < ApplicationController
   before_filter :get_bottem_class, :except => []
 
   def index
-    @channels = Channel.order('subscriptions desc').includes(:category)
+    category_ids = params[:categories][:category_ids].reject! { |c| c.empty? } if params[:categories]
+    if category_ids.blank?
+      @channels = Channel.order('subscriptions desc').includes(:category)
+    else
+      @channels = Channel.order('subscriptions desc').includes(:category).where('channels.category_id in (?)',category_ids)
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show

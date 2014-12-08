@@ -116,8 +116,11 @@ body{
   background-color: red;
 }
 
-.filter_class{width: 90%;height: 35px; padding: 4px 5% 4px 5%; }
+/*.filter_class{width: 90%;height: 35px; padding: 4px 5% 4px 5%; }
 .video_search_table{width: 100%;height: 95%; float: left;}
 .video_search_table td{width: 50%;}
 .video_search{width: 90%; height: 95%;float: left;}
-.categories_category_ids{width: 90%; height: 95%;float: left;z-index: -10}
+.categories_category_ids{width: 90%; height: 95%;float: left;z-index: -10}*/
+
+.filter_class{width: 100%;height: 35px; padding: 4px 5% 4px 5%;}
+.categories_category_ids{width: 75%;float: left;z-index: -10;}

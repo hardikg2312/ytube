@@ -1,3 +1,20 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#categories_category_ids').chosen();
+    $( ".categories_category_ids" ).chosen().change(function(event) {
+      $('#filter_form').submit();
+    });
+  });
+</script>
+
+
 <div class="container">
-  <%= render 'channel_item', :channels => @channels %>
+	<div class="filter_class">
+	  <%= form_tag( channels_path, remote: true, :method => 'get', :id => 'filter_form') do %>
+		  <%= collection_select :categories, :category_ids, Category.order('category_name') , :id, :category_name, {}, {:multiple => true,  :class => "categories_category_ids"}%>
+		<% end %>
+	</div>
+	<div class="item_container">
+    <%= render 'channel_item', :channels => @channels %>
+  </div>
 </div>

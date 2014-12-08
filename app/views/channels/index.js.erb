@@ -1,0 +1,6 @@
+<% if @channels.blank? %>
+  $('.item_container').empty();
+<% else %>
+  $('.item_container').empty().append("<%= escape_javascript(render 'channel_item', :channels => @channels) %>");
+<% end %>
+
