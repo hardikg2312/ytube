@@ -16,6 +16,8 @@
  *= require application_600
  *= require animations
  */
+
+ /********************** COMMON CSS start *******************/
 a, a:link, a:visited{
   text-decoration: none;
   color: #0084B4;
@@ -61,27 +63,6 @@ body{
   width: 90%;
 }
 
-.filters_container{width: 100%; height: auto; background-color: #ffffff;}
-.page_navigation_table{ width: 100%;}
-.page_navigation_table td{text-align: center;font-weight: bold;font-size: 1.5em; height: 32px;padding-top: 10px;}
-
-.category_index_txt{ color: #949494; text-align: left; margin: 4px; }
-.category_index_txt_span1{font-weight: bold;color: #0084B4;}
-.category_index_txt_span2 span a{ color: #404040; font-size: 0.95em; font-weight: bold; }
-.category_index_txt_span2_ago{font-size: 0.8em;}
-.category_index_txt_span3{font-size: 0.8em; float: left;}
-.category_index_txt_span4{font-size: 0.8em; float: right;}
-.category_index_txt_span5{text-decoration: underline !important ;font-size: 0.8em;color: #0084B4;}
-
-.video_container{background-color: #ffffff;}
-.video_show_txt{ color: #5D5D5D; text-align: left; margin: 4px; }
-.video_show_txt_span1{font-weight: bold;color: #0084B4; font-size: 1.5em;}
-.video_show_txt_span2 {}
-.video_show_txt_span2 span a{ color: #404040; font-size: 1.2em; font-weight: bold; }
-.video_show_txt_span3{float: left;font-size: 1.08em;}
-.video_show_txt_span4{float: right;font-size: 1.08em;}
-.video_show_txt_span5{font-size: 1.1em; color: #4B4B4B;}
-
 .container_item{
   float: left;
   width: 31%;
@@ -96,7 +77,35 @@ body{
 .container_item_image img{cursor: pointer;
   border-radius: 4px;
 }
-.container_pagination_button{ clear: both; width: 100%;font-size: 1.5em;font-weight: bold;text-align: center;padding-top: 20px;}
+
+.footer_container{
+  clear: both;
+  width: 100%;
+  height: 80px;
+  background-color: red;
+}
+ /********************** COMMON CSS end *******************/
+
+
+/**********************  VODEOS start   ************************/
+.filters_container{width: 100%; height: auto; background-color: #ffffff;}
+
+.videos_partial_txt{ color: #949494; text-align: left; margin: 4px; }
+.videos_partial_txt_span1{font-weight: bold;color: #0084B4;}
+.videos_partial_txt_span2 span a{ color: #404040; font-size: 0.95em; font-weight: bold; }
+.videos_partial_txt_span2_ago{font-size: 0.8em;}
+.videos_partial_txt_span3{font-size: 0.8em; float: left;}
+.videos_partial_txt_span4{font-size: 0.8em; float: right;}
+.videos_partial_txt_span5{text-decoration: underline !important ;font-size: 0.8em;color: #0084B4;}
+
+.video_container{background-color: #ffffff;}
+.video_show_txt{ color: #5D5D5D; text-align: left; margin: 4px; }
+.video_show_txt_span1{font-weight: bold;color: #0084B4; font-size: 1.5em;}
+.video_show_txt_span2 {}
+.video_show_txt_span2 span a{ color: #404040; font-size: 1.2em; font-weight: bold; }
+.video_show_txt_span3{float: left;font-size: 1.08em;}
+.video_show_txt_span4{float: right;font-size: 1.08em;}
+.video_show_txt_span5{font-size: 1.1em; color: #4B4B4B;}
 
 .video_player{
   width: 100%;
@@ -105,16 +114,19 @@ body{
   padding-bottom: 10px;  
 }
 
+/**********************  VODEOS end   ************************/
+
+/**********************  CHANNEL start   ************************/
 .channel_index_img{float: left;border-radius: 8px;}
 .channel_index_span1{font-weight: bold;color: #0084B4;float: left; margin: 8px;}
 .channel_index_span2{font-size: 0.85em; float: left; color: #505050; margin-left: 8px;}
+/**********************  CHANNEL end   ************************/
 
-.footer_container{
-  clear: both;
-  width: 100%;
-  height: 80px;
-  background-color: red;
-}
+
+.page_navigation_table{ width: 100%;}
+.page_navigation_table td{text-align: center;font-weight: bold;font-size: 1.5em; height: 32px;padding-top: 10px;}
+
+.container_pagination_button{ clear: both; width: 100%;font-size: 1.5em;font-weight: bold;text-align: center;padding-top: 20px;}
 
 /*.filter_class{width: 90%;height: 35px; padding: 4px 5% 4px 5%; }
 .video_search_table{width: 100%;height: 95%; float: left;}
