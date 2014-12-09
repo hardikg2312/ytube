@@ -134,5 +134,6 @@ body{
 .video_search{width: 90%; height: 95%;float: left;}
 .categories_category_ids{width: 90%; height: 95%;float: left;z-index: -10}*/
 
-.filter_class{width: 100%;height: 35px; padding: 4px 5% 4px 5%;}
-.categories_category_ids{width: 75%;float: left;z-index: -10;}
+.filter_class{width: 100%;height: 35px;}
+#filter_form{margin-left: 10%;}
+.categories_category_ids{width: 75%;z-index: -10;}
