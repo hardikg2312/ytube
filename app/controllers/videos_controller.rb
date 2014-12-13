@@ -18,6 +18,22 @@ class VideosController < ApplicationController
     @video = Video.find_by_video_id(params[:id])
   end
 
+  def update
+    video = Video.find_by_id(params[:id])
+    video.tag_list = params[:video][:tag_list]
+    video.save!
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def tags
+    @tags = ActsAsTaggableOn::Tag.all
+    respond_to do |format|
+      format.json{ render :json => @tags }
+    end
+  end
+
   private
   def get_bottem_class
     @video_border_class = 'active_border'

@@ -59,3 +59,6 @@ gem 'will_paginate', '~> 3.0.6'
 
 #choosen gem for token input
 gem 'chosen-rails'
+
+# to tags objects
+gem 'acts-as-taggable-on'

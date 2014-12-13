@@ -11,6 +11,8 @@ class Video < ActiveRecord::Base
   validates_uniqueness_of :video_id
   validates_presence_of :channel_id
 
+  # we can tag the videos
+  acts_as_taggable
 
   def create_video(params)
     api_key = "AIzaSyC0HWiU5e7AFkXt2NMNBkPmPOVgC_QDx_0"

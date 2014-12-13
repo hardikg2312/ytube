@@ -22,4 +22,13 @@ $(document).ready(function(){
   // },function(){
   // $(this).removeClass('border_bottom');
   // });
+  
+  // $('#video_tag_input').tokenInput("/tags.json", {
+  //   tokenValue: "name",
+  //   prePopulate: $("#video_tag_input").data("load"),
+  //   theme: "facebook",
+  //   preventDuplicates: true ,
+  //   noResultsText: 'No result, Hit Enter to create a new tag'
+  // });
+
 });
