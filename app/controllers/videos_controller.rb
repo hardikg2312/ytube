@@ -27,13 +27,6 @@ class VideosController < ApplicationController
     end
   end
 
-  def tags
-    @tags = ActsAsTaggableOn::Tag.all
-    respond_to do |format|
-      format.json{ render :json => @tags }
-    end
-  end
-
   private
   def get_bottem_class
     @video_border_class = 'active_border'

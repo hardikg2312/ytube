@@ -27,11 +27,11 @@
         <%= form_for @video, :remote => true do |f| %>
           <table style="width:100%;">
             <tr>
-              <td>
-                  <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+              <td width="75%">
+                  <%= f.label :tag_list, "Tags" %><br />
                   <%= f.text_field :tag_list, data: {load: @video.tags}, :id => "video_tag_input" %>
               </td>
-              <td><%= f.submit "tag", :class => "video_tag_submit_btn btn" %></td>
+              <td width="25%"><%= f.submit "tag", :class => "video_tag_submit_btn btn" %></td>
             </tr>
           </table>
         <% end %>
