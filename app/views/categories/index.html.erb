@@ -5,7 +5,9 @@
       <div class="category_index_item">
         <%= link_to image_tag(category.category_photo_url.to_s, :width => "100%", :height => "125px"), category_path(category) , :class => "category_index_item_image"%>
         <br>
-        <%= "#{category.category_name}(#{category.videos.size})" %>
+        <div class="category_index_text">
+          <%= "#{category.category_name} (#{category.videos.size})" %>
+        </div>
       </div>
     <% end %>
   <% end %>	
