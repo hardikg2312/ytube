@@ -8,7 +8,7 @@
   .container_item{
     float: left;
     width: 47%;
-    height: 320px;
+    height: auto;
     border: 1px solid #e1e8ed;
     margin: 1%;
     margin-bottom: 30px;
@@ -34,4 +34,8 @@
   }
   .category_index_item_image img{cursor: pointer;border-radius: 4px;}
   /**********************  CATEGORY end   ************************/
+
+  /**********************  FOOTER start   ************************/
+  .footer_submit_btn{width: 90%;margin: auto;height: 32px;font-size: 1.1em;margin-top: 12px;}
+  /**********************  FOOTER end   ************************/
 }

@@ -1,3 +1,20 @@
-<div class="footer_container">
-	dthjsdtjhxd
+<div class="footer">
+  <div class="footer_container">
+    <div>You can also suggest video by providing YouTube link below</div>
+     <div class="footer_form">
+      <%= form_for Suggetion.new, :remote => true do |f| %>
+        <table style="width:100%;">
+          <tr>
+            <td width="75%">
+                <i><%= f.label :name, "Video link :"%></i>
+                <%= f.text_field :name, :class => "footer_input", placeholder: "Paste Youtube Video link here",:maxlength=>"256",:required => true%>
+                <%= f.hidden_field :suggetion_type, :value => "video"%>
+            </td>
+            <td width="25%"><%= f.submit "Suggest", :class => "footer_submit_btn"%></td>
+          </tr>
+        </table>
+        <div class="footer_hidden_div"></div>
+      <% end %>
+    </div>
+  </div>
 </div>
