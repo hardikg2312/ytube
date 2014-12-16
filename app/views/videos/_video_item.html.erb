@@ -12,11 +12,11 @@ $(document).ready(function(){
       <img src="<%= v.thumbnail_medium || v.thumbnail_standard %>" width="100%" height="222px;">
     </div>
     <div class="videos_partial_txt">
-      <%= link_to v.video_id do %>
+      <%= link_to video_path(v.video_id) do %>
         <span class="videos_partial_txt_span1"><%= truncate(v.title, length: 40) %></span><br>
       <% end %>
       <span class="videos_partial_txt_span2">
-        by <span><%= link_to v.channel.title, v %></span>
+        by <span><%= link_to v.channel.title, v.channel %></span>
         <span class="videos_partial_txt_span2_ago"><%= days_ago(v.published_at) %></span>
       </span>
       <br>
