@@ -41,6 +41,10 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+group :development do
+	# to detect N+1 query
+  gem 'bullet'
+end
 
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
