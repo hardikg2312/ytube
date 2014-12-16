@@ -62,3 +62,6 @@ gem 'chosen-rails'
 
 # to tags objects
 gem 'acts-as-taggable-on'
+
+#to automaticaly link likns in view
+gem 'rails_autolink'
