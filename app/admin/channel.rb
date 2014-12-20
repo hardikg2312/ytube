@@ -44,6 +44,26 @@ ActiveAdmin.register Channel do
   preserve_default_filters!
   filter :category, :as => :select, :collection => Category.all.collect {|c| [c.category_name, c.id]}
 
+  controller do
+    def show
+      @channel = Channel.friendly.find_by_slug(params[:id])
+    end
+
+    def edit
+      @channel = Channel.friendly.find_by_slug(params[:id])
+    end
+
+    def update
+      @channel = Channel.friendly.find_by_slug(params[:id])
+      super
+    end
+
+    def destroy
+      @channel = Channel.friendly.find_by_slug(params[:id])
+      super
+    end
+  end
+
 
 
 end
