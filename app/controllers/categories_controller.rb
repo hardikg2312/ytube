@@ -11,9 +11,9 @@ class CategoriesController < ApplicationController
     @sub_category = Category.includes(:videos).where(:category_type => "sub", :parent_category => @category.id).order('category_name')
     per_page = params[:per_page] || 6
     if params[:sort] == 'popular'
-      @videos = @category.videos.order('view_count desc').paginate(:page => current_page, :per_page => per_page)
+      @videos = @category.videos.includes(:channel).order('view_count desc').paginate(:page => current_page, :per_page => per_page)
     else
-      @videos = @category.videos.order('id desc').paginate(:page => current_page, :per_page => per_page)
+      @videos = @category.videos.includes(:channel).order('id desc').paginate(:page => current_page, :per_page => per_page)
     end
     @channels = @category.channels.order('channels.subscriptions desc').limit(12)
     respond_to do |format|

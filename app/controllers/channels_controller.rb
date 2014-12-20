@@ -16,7 +16,7 @@ class ChannelsController < ApplicationController
   end
 
   def show
-  	channel = Channel.find_by_id(params[:id])
+    channel = Channel.friendly.find_by_slug(params[:id])
     @videos = channel.videos.order('view_count desc')
   end
 

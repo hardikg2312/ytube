@@ -51,6 +51,8 @@ body{
   padding-right: 20px;
 }
 .navigation_links:hover{
+  transition: 0.1s;
+  color: #0084B4;
   border-bottom: 6px solid #0084B4;
 }
 .navigation_float_link{margin-left: 104px;text-align: center;font-weight: bold;font-size: 1.5em; height: 32px;background-color: #ffffff;}
@@ -174,7 +176,7 @@ body{
 .video_search{width: 90%; height: 95%;float: left;}
 .categories_category_ids{width: 90%; height: 95%;float: left;z-index: -10}*/
 
-.filter_class{width: 100%;height: 35px;}
+.filter_class{width: 100%;height: 35px;color: #0084B4;font-size: 1.1em; }
 #filter_form{margin-left: 10%;}
 .categories_category_ids{width: 75%;z-index: -10;}
 

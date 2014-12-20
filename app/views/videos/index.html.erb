@@ -1,13 +1,5 @@
 <script type="text/javascript">
   $(document).ready(function(){
-    $(window).scroll(function(){
-    var top = $(this).scrollTop();
-    if(top > 60)
-      $('.navigation_float_link').empty().append('<%= link_to "New", videos_path(:sort => "new", :page => 1), :remote => true %> | <%= link_to "Popular", videos_path(:sort => "popular", :page => 1), :remote => true %>').fadeIn();
-    else
-      $('.navigation_float_link').fadeOut();
-    });
-    
     $('.video_search').keypress(function(event) {
       if ( event.which == 13 ) {
         $('#filter_form').submit();

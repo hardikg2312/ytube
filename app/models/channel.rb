@@ -8,6 +8,9 @@ class Channel < ActiveRecord::Base
   validates_presence_of   :ytube_id
   validates_uniqueness_of :ytube_id
 
+  extend FriendlyId
+  friendly_id :category_name, use: :slugged
+
   class << self
     def get_or_create_channel(id, category_id)
       channel = Channel.find_or_initialize_by(:ytube_id => id)

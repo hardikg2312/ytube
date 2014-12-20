@@ -11,6 +11,7 @@
 <div class="container">
 	<div class="filter_class">
 	  <%= form_tag( channels_path, remote: true, :method => 'get', :id => 'filter_form') do %>
+      <span>Categories : </span>
 		  <%= collection_select :categories, :category_ids, Category.order('category_name') , :id, :category_name, {}, {:multiple => true,  :class => "categories_category_ids"}%>
 		<% end %>
 	</div>
