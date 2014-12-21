@@ -1,8 +1,18 @@
 <div class="container">
   <table class="page_navigation_table">
-    <tr><td><%= link_to "New", category_path(@category, :sort => "new", :page => 1), :remote => true %>  |
-            <%= link_to "Popular", category_path(@category, :sort => "popular", :page => 1), :remote => true %></td></tr>
-  </table>
+      <tr>
+          <td width="25%" class="page_navigation_table_td1">
+              <%= link_to "New", videos_path(:sort => "new", :page => 1), :remote => true %>  |
+              <%= link_to "Popular", videos_path(:sort => "popular", :page => 1), :remote => true %>
+          </td>
+          <td width="75%" class="page_navigation_table_td1">
+              <%= form_tag( videos_path, remote: true, :method => 'get', :id => 'filter_form') do %>
+                <input type="text" name = "video_search" class="video_search">
+                <%= submit_tag "sgsg", :class => "video_search_submit" %>
+              <% end %>
+          </td>
+      </tr>
+    </table>
   <div class="item_container">
     <%= render 'videos/video_item', :videos => @videos %>
   </div>

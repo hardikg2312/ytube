@@ -3,10 +3,11 @@ class VideosController < ApplicationController
 
   def index
     per_page = params[:per_page] || 15
-    if params[:sort] == 'popular'
-      @videos = Video.includes(:channel).order('view_count desc').paginate(:page => current_page, :per_page => per_page)
+    if params[:video_search].blank?
+      @videos = Video.includes(:channel).order('view_count desc').paginate(:page => current_page, :per_page => per_page) if params[:sort] == 'popular'
+      @videos ||= Video.includes(:channel).order('id desc').paginate(:page => current_page, :per_page => per_page)
     else
-      @videos = Video.includes(:channel).order('id desc').paginate(:page => current_page, :per_page => per_page)
+      @videos = Video.where("title like '%#{params[:video_search]}%'").paginate(:page => current_page, :per_page => per_page)
     end
     respond_to do |format|
       format.html
