@@ -9,7 +9,7 @@ class Channel < ActiveRecord::Base
   validates_uniqueness_of :ytube_id
 
   extend FriendlyId
-  friendly_id :category_name, use: :slugged
+  friendly_id :title, use: :slugged
 
   class << self
     def get_or_create_channel(id, category_id)
