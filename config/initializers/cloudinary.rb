@@ -1,6 +1,7 @@
+# cloudinary image storage on ahjnsfootball@gmail.com
 Cloudinary.config do |config|
-  config.cloud_name = 'ytube'
-  config.api_key = '498637678928851'
-  config.api_secret = 'WO_xSAeHbCcYFWYh2mvs37ddb4U'
+  config.cloud_name = 'dikkxjqju'
+  config.api_key = '324245191732398'
+  config.api_secret = 'iZiMn0zgkvOUbicFtS-YJVYnW3M'
   config.cdn_subdomain = true
 end
